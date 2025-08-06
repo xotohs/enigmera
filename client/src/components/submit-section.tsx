@@ -279,9 +279,7 @@ export default function SubmitSection() {
               <button 
                 type="submit"
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 py-4 rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 box-shadow-depth font-medium text-lg"
-              >
-                Launch Your Demo Into Space
-              </button>
+              >Send us your track</button>
             </form>
           </div>
         </div>
