@@ -15,7 +15,8 @@ export default function ContactSection() {
             <div className="glass-morphism rounded-xl p-6 hover:bg-purple-500/10 transition-all duration-300 box-shadow-depth">
               <Mail className="w-8 h-8 mx-auto mb-4 text-purple-400" />
               <h3 className="font-semibold mb-2 text-purple-300">Email</h3>
-              <p className="text-gray-400 text-sm">contact@enigmera.com</p>
+              <p className="text-gray-400 text-sm">netluctpro@gmail.com
+</p>
             </div>
             
             <div className="glass-morphism rounded-xl p-6 hover:bg-purple-500/10 transition-all duration-300 box-shadow-depth">
