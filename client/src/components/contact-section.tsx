@@ -7,7 +7,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-shadow-glow">
-            <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">Send us your track</span>
+            <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">Get in touch</span>
           </h2>
           <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">Have questions or want to connect? Drop us a message.</p>
           
