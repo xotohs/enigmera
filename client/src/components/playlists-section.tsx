@@ -78,9 +78,9 @@ export default function PlaylistsSection() {
         </div>
         
         <div className="text-center mt-12">
-          <button className="glass-morphism-strong px-8 py-4 rounded-xl hover:bg-purple-500/10 transition-all duration-300 box-shadow-depth font-medium">
-            View All Playlists
-          </button>
+          <p className="text-gray-400 font-medium">
+            More playlists coming soon...
+          </p>
         </div>
       </div>
     </section>

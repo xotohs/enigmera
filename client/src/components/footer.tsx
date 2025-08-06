@@ -13,16 +13,19 @@ export default function Footer() {
           </div>
           
           <div className="flex space-x-6 text-gray-400 text-sm">
-            <a href="#" className="hover:text-purple-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-purple-300 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-purple-300 transition-colors">Licensing</a>
+            <a href="/privacy" className="hover:text-purple-300 transition-colors">Privacy Notice</a>
+            <a href="/terms" className="hover:text-purple-300 transition-colors">Terms & Conditions</a>
           </div>
         </div>
         
         <div className="text-center mt-8 pt-8 border-t border-purple-500/10">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm mb-4">
             © 2025 Enigmera Records. All rights reserved.
           </p>
+          <div className="flex justify-center space-x-6 text-xs text-gray-400">
+            <a href="/privacy" className="hover:text-purple-300 transition-colors">Privacy Notice</a>
+            <a href="/terms" className="hover:text-purple-300 transition-colors">Terms & Conditions</a>
+          </div>
         </div>
       </div>
     </footer>

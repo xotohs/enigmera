@@ -12,6 +12,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 gradient-mesh" />
       <div className="absolute inset-0 gradient-radial" />
       <div className="absolute inset-0 cosmic-stars" />
+      <div className="animated-stars" />
+      <div className="absolute inset-0 fade-overlay" />
       
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">

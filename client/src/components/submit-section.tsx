@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Upload } from "lucide-react";
+import { Upload, Plus, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function SubmitSection() {
   const [formData, setFormData] = useState({
     artistName: "",
     email: "",
-    artist2: "",
-    artist3: "",
+    additionalArtists: [] as string[],
     description: "",
-    demoLink: ""
+    demoLink: "",
+    demoFile: null as File | null,
+    submissionType: "link" as "link" | "file"
   });
   const { toast } = useToast();
 
@@ -17,10 +18,28 @@ export default function SubmitSection() {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.artistName || !formData.email || !formData.description || !formData.demoLink) {
+    if (!formData.artistName || !formData.email) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.submissionType === "link" && !formData.demoLink) {
+      toast({
+        title: "Missing Demo Link",
+        description: "Please provide a SoundCloud or Google Drive link",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.submissionType === "file" && !formData.demoFile) {
+      toast({
+        title: "Missing Demo File",
+        description: "Please upload a demo file",
         variant: "destructive",
       });
       return;
@@ -36,17 +55,53 @@ export default function SubmitSection() {
     setFormData({
       artistName: "",
       email: "",
-      artist2: "",
-      artist3: "",
+      additionalArtists: [],
       description: "",
-      demoLink: ""
+      demoLink: "",
+      demoFile: null,
+      submissionType: "link"
     });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFormData({
+        ...formData,
+        demoFile: file
+      });
+    }
+  };
+
+  const addArtist = () => {
+    if (formData.additionalArtists.length < 2) {
+      setFormData({
+        ...formData,
+        additionalArtists: [...formData.additionalArtists, ""]
+      });
+    }
+  };
+
+  const updateAdditionalArtist = (index: number, value: string) => {
+    const updated = [...formData.additionalArtists];
+    updated[index] = value;
+    setFormData({
+      ...formData,
+      additionalArtists: updated
+    });
+  };
+
+  const removeArtist = (index: number) => {
+    setFormData({
+      ...formData,
+      additionalArtists: formData.additionalArtists.filter((_, i) => i !== index)
     });
   };
 
@@ -100,66 +155,130 @@ export default function SubmitSection() {
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-purple-300 text-sm font-medium mb-2">
-                    Collaborating Artist 2
+              {/* Additional Artists */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-purple-300 text-sm font-medium">
+                    Additional Artists
                   </label>
-                  <input 
-                    type="text"
-                    name="artist2"
-                    value={formData.artist2}
-                    onChange={handleInputChange}
-                    className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
-                    placeholder="Optional collaborator"
-                  />
+                  {formData.additionalArtists.length < 2 && (
+                    <button 
+                      type="button"
+                      onClick={addArtist}
+                      className="flex items-center space-x-1 text-purple-400 hover:text-purple-300 transition-colors"
+                    >
+                      <Plus className="w-4 h-4" />
+                      <span className="text-sm">Add Artist</span>
+                    </button>
+                  )}
                 </div>
-                <div>
-                  <label className="block text-purple-300 text-sm font-medium mb-2">
-                    Collaborating Artist 3
-                  </label>
-                  <input 
-                    type="text"
-                    name="artist3"
-                    value={formData.artist3}
-                    onChange={handleInputChange}
-                    className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
-                    placeholder="Optional collaborator"
-                  />
-                </div>
+                {formData.additionalArtists.map((artist, index) => (
+                  <div key={index} className="flex items-center space-x-2 mb-2">
+                    <input 
+                      type="text"
+                      value={artist}
+                      onChange={(e) => updateAdditionalArtist(index, e.target.value)}
+                      className="flex-1 bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
+                      placeholder="Collaborating artist"
+                    />
+                    <button 
+                      type="button"
+                      onClick={() => removeArtist(index)}
+                      className="text-gray-400 hover:text-red-400 transition-colors"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+                ))}
               </div>
               
+              {/* Demo Submission Type */}
               <div>
-                <label className="block text-purple-300 text-sm font-medium mb-2">
-                  Demo Link (SoundCloud/Google Drive) *
+                <label className="block text-purple-300 text-sm font-medium mb-4">
+                  Demo Submission *
                 </label>
-                <input 
-                  type="url"
-                  name="demoLink"
-                  value={formData.demoLink}
-                  onChange={handleInputChange}
-                  className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
-                  placeholder="https://soundcloud.com/your-track or https://drive.google.com/..."
-                  required
-                />
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <label className="flex items-center space-x-3 glass-morphism rounded-xl p-4 cursor-pointer hover:bg-purple-500/10 transition-colors">
+                    <input
+                      type="radio"
+                      name="submissionType"
+                      value="link"
+                      checked={formData.submissionType === "link"}
+                      onChange={(e) => setFormData({ ...formData, submissionType: e.target.value as "link" | "file" })}
+                      className="text-purple-400"
+                    />
+                    <div>
+                      <div className="text-white font-medium">Link</div>
+                      <div className="text-gray-400 text-xs">SoundCloud/Google Drive (Preferred)</div>
+                    </div>
+                  </label>
+                  <label className="flex items-center space-x-3 glass-morphism rounded-xl p-4 cursor-pointer hover:bg-purple-500/10 transition-colors">
+                    <input
+                      type="radio"
+                      name="submissionType"
+                      value="file"
+                      checked={formData.submissionType === "file"}
+                      onChange={(e) => setFormData({ ...formData, submissionType: e.target.value as "link" | "file" })}
+                      className="text-purple-400"
+                    />
+                    <div>
+                      <div className="text-white font-medium">File Upload</div>
+                      <div className="text-gray-400 text-xs">MP3, WAV, FLAC</div>
+                    </div>
+                  </label>
+                </div>
+
+                {formData.submissionType === "link" ? (
+                  <input 
+                    type="url"
+                    name="demoLink"
+                    value={formData.demoLink}
+                    onChange={handleInputChange}
+                    className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
+                    placeholder="https://soundcloud.com/your-track or https://drive.google.com/..."
+                    required
+                  />
+                ) : (
+                  <div className="glass-morphism rounded-xl p-8 border-2 border-dashed border-purple-500/30 text-center hover:border-purple-400/50 transition-colors cursor-pointer">
+                    <input 
+                      type="file"
+                      onChange={handleFileChange}
+                      accept=".mp3,.wav,.flac"
+                      className="hidden"
+                      id="demoFile"
+                    />
+                    <label htmlFor="demoFile" className="cursor-pointer">
+                      <Upload className="w-12 h-12 mx-auto mb-4 text-purple-400" />
+                      <p className="text-gray-300 mb-2">
+                        {formData.demoFile ? formData.demoFile.name : "Drop your demo here or click to browse"}
+                      </p>
+                      <p className="text-gray-500 text-sm">MP3, WAV, FLAC up to 100MB</p>
+                    </label>
+                  </div>
+                )}
               </div>
               
               <div>
                 <label className="block text-purple-300 text-sm font-medium mb-2">
-                  Track Description *
+                  Track Description
                 </label>
                 <textarea 
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
                   className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors h-32 resize-none"
-                  placeholder="Tell us about your cosmic journey..."
-                  required
+                  placeholder="Tell us about your cosmic journey... (optional)"
                 />
               </div>
               
 
               
+              <div className="text-center mb-6">
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  <strong>Privacy Notice:</strong> We only use the information you submit to review your demo or contact you about it. We do not share your data with third parties or store it beyond what's necessary to communicate with you.
+                </p>
+              </div>
+
               <button 
                 type="submit"
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 py-4 rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 box-shadow-depth font-medium text-lg"

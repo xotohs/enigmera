@@ -21,16 +21,7 @@ export default function AboutSection() {
                 </p>
               </div>
               
-              <div className="mt-10 grid grid-cols-2 gap-8">
-                <div className="glass-morphism rounded-xl p-6 text-center box-shadow-depth">
-                  <div className="text-3xl font-bold text-purple-300 mb-2">50+</div>
-                  <div className="text-gray-400 text-sm">Artists Signed</div>
-                </div>
-                <div className="glass-morphism rounded-xl p-6 text-center box-shadow-depth">
-                  <div className="text-3xl font-bold text-blue-300 mb-2">200M+</div>
-                  <div className="text-gray-400 text-sm">Streams</div>
-                </div>
-              </div>
+
             </div>
             
             <div className="relative">
@@ -39,21 +30,6 @@ export default function AboutSection() {
                 style={{ background: "linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(30, 58, 138, 0.2) 100%)" }}
               >
                 <div className="text-8xl font-bold text-white/10">E</div>
-              </div>
-              
-              {/* Floating Stats */}
-              <div className="absolute -top-6 -right-6 glass-morphism-strong rounded-xl p-4 box-shadow-depth">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-300">5</div>
-                  <div className="text-gray-400 text-xs">Years</div>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-6 -left-6 glass-morphism-strong rounded-xl p-4 box-shadow-depth">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-300">15</div>
-                  <div className="text-gray-400 text-xs">Countries</div>
-                </div>
               </div>
             </div>
           </div>
