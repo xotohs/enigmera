@@ -15,7 +15,7 @@ const playlists = [
     id: 2,
     name: "What we're listening to",
     description: "Our current favorites and fresh discoveries",
-    platform: "Deezer",
+    platform: "Spotify",
     tracks: 28,
     duration: "1h 52m",
     cover: "linear-gradient(135deg, rgba(255, 95, 95, 0.3) 0%, rgba(30, 58, 138, 0.3) 100%)",
