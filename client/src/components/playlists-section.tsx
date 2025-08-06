@@ -25,13 +25,10 @@ export default function PlaylistsSection() {
   return (
     <section id="playlists" className="py-20 relative">
       <div className="absolute inset-0 cosmic-stars" />
-      
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-glow">
-            <span className="bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
-              Cosmic Playlists
-            </span>
+            <span className="bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">Our Playlists</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Curated collections of galactic sounds for every cosmic journey
