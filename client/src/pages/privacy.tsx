@@ -56,9 +56,7 @@ export default function Privacy() {
                   
                   <div className="space-y-4">
                     <h2 className="text-2xl font-semibold text-purple-300">Contact</h2>
-                    <p>
-                      If you have any questions about this privacy notice, please contact us at contact@enigmera.com.
-                    </p>
+                    <p>If you have any questions about this privacy notice, please contact us at netluctpro@gmail.com.</p>
                   </div>
                 </div>
               </div>
