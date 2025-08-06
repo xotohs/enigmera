@@ -30,9 +30,7 @@ export default function PlaylistsSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-glow">
             <span className="bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">Our Playlists</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Curated collections of galactic sounds for every cosmic journey
-          </p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Our top picks for every kind of listener.</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
