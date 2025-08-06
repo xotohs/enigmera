@@ -26,10 +26,47 @@ export default function AboutSection() {
             
             <div className="relative">
               <div 
-                className="rounded-2xl box-shadow-card w-full h-96 flex items-center justify-center"
+                className="rounded-2xl box-shadow-card w-full h-96 flex items-center justify-center relative overflow-hidden"
                 style={{ background: "linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(30, 58, 138, 0.2) 100%)" }}
               >
-                <div className="text-8xl font-bold text-white/10">E</div>
+                {/* Black hole / Planet visual */}
+                <div className="relative">
+                  {/* Main planet/black hole */}
+                  <div 
+                    className="w-32 h-32 rounded-full relative"
+                    style={{
+                      background: "radial-gradient(circle at 30% 30%, rgba(147, 51, 234, 0.8) 0%, rgba(30, 58, 138, 0.6) 40%, rgba(0, 0, 0, 0.9) 70%)",
+                      boxShadow: "0 0 40px rgba(147, 51, 234, 0.3), inset 0 0 40px rgba(0, 0, 0, 0.8)"
+                    }}
+                  >
+                    {/* Accretion disk / rings */}
+                    <div 
+                      className="absolute inset-0 rounded-full opacity-40"
+                      style={{
+                        background: "conic-gradient(from 0deg, transparent, rgba(147, 51, 234, 0.3), transparent, rgba(30, 58, 138, 0.3), transparent)",
+                        transform: "scale(1.8)",
+                        animation: "spin 20s linear infinite"
+                      }}
+                    />
+                    <div 
+                      className="absolute inset-0 rounded-full opacity-20"
+                      style={{
+                        background: "conic-gradient(from 180deg, transparent, rgba(30, 58, 138, 0.4), transparent, rgba(147, 51, 234, 0.2), transparent)",
+                        transform: "scale(2.2)",
+                        animation: "spin 30s linear infinite reverse"
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Gravitational lensing effect */}
+                  <div 
+                    className="absolute inset-0 rounded-full opacity-10"
+                    style={{
+                      background: "radial-gradient(circle, transparent 60%, rgba(255, 255, 255, 0.1) 80%, transparent 100%)",
+                      transform: "scale(3)"
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>

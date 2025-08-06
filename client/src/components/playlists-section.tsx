@@ -8,7 +8,8 @@ const playlists = [
     platform: "Spotify",
     tracks: 42,
     duration: "2h 35m",
-    cover: "linear-gradient(135deg, rgba(30, 215, 96, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%)"
+    cover: "linear-gradient(135deg, rgba(30, 215, 96, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%)",
+    url: "https://open.spotify.com/playlist/5wnecz03JNx7i6uEjkeLA0?si=f5639b1f9d59436f&pt=685ccf34bd74caa35271bfa9cd35f43b"
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const playlists = [
     platform: "Deezer",
     tracks: 28,
     duration: "1h 52m",
-    cover: "linear-gradient(135deg, rgba(255, 95, 95, 0.3) 0%, rgba(30, 58, 138, 0.3) 100%)"
+    cover: "linear-gradient(135deg, rgba(255, 95, 95, 0.3) 0%, rgba(30, 58, 138, 0.3) 100%)",
+    url: "https://open.spotify.com/playlist/7jw2rN0LpPEtshrWl8VEpe?si=96af92dcd4c849bd"
   }
 ];
 
@@ -35,9 +37,12 @@ export default function PlaylistsSection() {
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {playlists.map((playlist) => (
-            <div 
+            <a
               key={playlist.id}
-              className="glass-morphism rounded-2xl p-6 hover:bg-purple-500/5 transition-all duration-500 box-shadow-card group cursor-pointer"
+              href={playlist.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-morphism rounded-2xl p-6 hover:bg-purple-500/5 transition-all duration-500 box-shadow-card group cursor-pointer block"
             >
               <div 
                 className="w-full h-48 rounded-xl mb-4 relative overflow-hidden"
@@ -68,7 +73,7 @@ export default function PlaylistsSection() {
                 </span>
                 <span>{playlist.duration}</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         

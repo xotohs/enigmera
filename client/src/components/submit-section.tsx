@@ -132,7 +132,7 @@ export default function SubmitSection() {
                     value={formData.artistName}
                     onChange={handleInputChange}
                     className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
-                    placeholder="Your cosmic alias"
+                    placeholder="Your artist name"
                     required
                   />
                 </div>
@@ -264,7 +264,7 @@ export default function SubmitSection() {
                   value={formData.description}
                   onChange={handleInputChange}
                   className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors h-32 resize-none"
-                  placeholder="Tell us about your cosmic journey... (optional)"
+                  placeholder="Tell us about your track... (optional)"
                 />
               </div>
               
