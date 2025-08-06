@@ -108,7 +108,6 @@ export default function SubmitSection() {
   return (
     <section id="submit" className="py-20 relative">
       <div className="absolute inset-0 cosmic-stars" />
-      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -117,9 +116,7 @@ export default function SubmitSection() {
                 Submit Your Demo
               </span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Ready to join our galactic collective? Share your cosmic creations with us
-            </p>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Want to join our roster? Send us your music.</p>
           </div>
           
           <div className="glass-morphism-strong rounded-2xl p-8 md:p-12 box-shadow-card">
