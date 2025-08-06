@@ -65,7 +65,7 @@ export default function Terms() {
                   </div>
                   
                   <div className="text-sm text-gray-400 pt-6 border-t border-purple-500/20">
-                    <p>Last updated: January 2025</p>
+                    <p>Last updated: 7th August 2025</p>
                   </div>
                 </div>
               </div>
