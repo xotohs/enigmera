@@ -14,13 +14,10 @@ export default function AboutSection() {
               </h2>
               <div className="space-y-6 text-gray-300 leading-relaxed">
                 <p className="text-lg">
-                  Founded in the depths of cosmic inspiration, Enigmera Records emerged as a sanctuary for artists who dare to explore the infinite possibilities of electronic music.
+                  Enigmera Records is an independent label focused on curating and amplifying unique, genre-defying sounds. While we are just starting out, our mission is clear: empower emerging talent and push sonic boundaries.
                 </p>
                 <p>
-                  We believe that music is the universal language that connects all beings across the galaxy. Our mission is to discover, nurture, and amplify the voices of artists who push the boundaries of sound into uncharted territories.
-                </p>
-                <p>
-                  From ambient spacewalks to high-energy cosmic raves, Enigmera represents the full spectrum of galactic soundscapes. We're not just a record label – we're curators of the future's soundtrack.
+                  We're building a home for artists who dare to sound different.
                 </p>
               </div>
               

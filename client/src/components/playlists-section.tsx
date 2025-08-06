@@ -3,35 +3,21 @@ import { Play, Headphones, Star } from "lucide-react";
 const playlists = [
   {
     id: 1,
-    name: "Deep Space Ambient",
-    description: "Ethereal soundscapes for cosmic meditation and exploration",
-    tracks: 24,
-    duration: "2h 15m",
-    cover: "linear-gradient(135deg, rgba(147, 51, 234, 0.3) 0%, rgba(30, 58, 138, 0.3) 100%)"
+    name: "Best Phonks of 2025",
+    description: "The hardest phonk tracks defining this year",
+    platform: "Spotify",
+    tracks: 42,
+    duration: "2h 35m",
+    cover: "linear-gradient(135deg, rgba(30, 215, 96, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%)"
   },
   {
     id: 2,
-    name: "Galactic Bass",
-    description: "Heavy cosmic rhythms that shake the galaxy",
-    tracks: 18,
-    duration: "1h 42m",
-    cover: "linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%)"
-  },
-  {
-    id: 3,
-    name: "Stellar Frequencies",
-    description: "Hypnotic beats from across the universe",
-    tracks: 31,
-    duration: "3h 8m",
-    cover: "linear-gradient(135deg, rgba(88, 28, 135, 0.3) 0%, rgba(30, 64, 175, 0.3) 100%)"
-  },
-  {
-    id: 4,
-    name: "Cosmic Chillout",
-    description: "Relaxing vibes for interplanetary downtime",
-    tracks: 20,
-    duration: "2h 35m",
-    cover: "linear-gradient(135deg, rgba(30, 64, 175, 0.3) 0%, rgba(88, 28, 135, 0.3) 100%)"
+    name: "What we're listening to",
+    description: "Our current favorites and fresh discoveries",
+    platform: "Deezer",
+    tracks: 28,
+    duration: "1h 52m",
+    cover: "linear-gradient(135deg, rgba(255, 95, 95, 0.3) 0%, rgba(30, 58, 138, 0.3) 100%)"
   }
 ];
 
@@ -52,7 +38,7 @@ export default function PlaylistsSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {playlists.map((playlist) => (
             <div 
               key={playlist.id}
@@ -74,8 +60,9 @@ export default function PlaylistsSection() {
                 </div>
               </div>
               
-              <h3 className="text-lg font-semibold mb-2 text-purple-300">{playlist.name}</h3>
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              <h3 className="text-xl font-semibold mb-2 text-purple-300">{playlist.name}</h3>
+              <p className="text-gray-400 text-sm mb-2 font-medium">{playlist.platform}</p>
+              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                 {playlist.description}
               </p>
               

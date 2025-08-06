@@ -16,16 +16,18 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
+          {/* Logo Space - will be filled later */}
+          <div className="w-48 h-48 mx-auto mb-8 glass-morphism rounded-2xl flex items-center justify-center box-shadow-depth">
+            <div className="text-6xl font-bold text-purple-300/50">E</div>
+          </div>
+          
           <h1 className="text-6xl md:text-8xl font-bold mb-6 text-shadow-glow">
             <span className="bg-gradient-to-r from-purple-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
               Enigmera
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light">
-            Exploring the infinite depths of galactic sound
-          </p>
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            A record label dedicated to discovering and nurturing artists who push the boundaries of electronic music into cosmic realms
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+            An independent record label shaping the sound of tomorrow.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
