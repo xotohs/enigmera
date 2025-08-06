@@ -59,9 +59,7 @@ export default function Terms() {
                   
                   <div className="space-y-4">
                     <h2 className="text-2xl font-semibold text-purple-300">Contact</h2>
-                    <p>
-                      For questions about these terms, contact us at contact@enigmera.com.
-                    </p>
+                    <p>For questions about these terms, contact us at netluctpro@gmail.com.</p>
                   </div>
                   
                   <div className="text-sm text-gray-400 pt-6 border-t border-purple-500/20">
