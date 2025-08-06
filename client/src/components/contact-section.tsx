@@ -9,9 +9,7 @@ export default function ContactSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-shadow-glow">
             <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">Send us your track</span>
           </h2>
-          <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
-            Ready to embark on a galactic musical journey? Reach out to us across the void
-          </p>
+          <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">Have questions or want to connect? Drop us a message.</p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
             <div className="glass-morphism rounded-xl p-6 hover:bg-purple-500/10 transition-all duration-300 box-shadow-depth">
