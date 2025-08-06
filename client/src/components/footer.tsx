@@ -21,7 +21,7 @@ export default function Footer() {
         
         <div className="text-center mt-8 pt-8 border-t border-purple-500/10">
           <p className="text-gray-500 text-sm">
-            © 2024 Enigmera Records. Transmitting cosmic frequencies across the galaxy.
+            © 2025 Enigmera Records. All rights reserved.
           </p>
         </div>
       </div>

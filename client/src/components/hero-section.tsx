@@ -8,15 +8,10 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Galactic Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat gradient-mesh"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')`
-        }}
-      />
-      
+      {/* Cosmic Background */}
+      <div className="absolute inset-0 gradient-mesh" />
       <div className="absolute inset-0 gradient-radial" />
+      <div className="absolute inset-0 cosmic-stars" />
       
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -35,14 +30,14 @@ export default function HeroSection() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              onClick={() => handleNavClick('artists')}
+              onClick={() => handleNavClick('playlists')}
               className="glass-morphism-strong px-8 py-4 rounded-xl hover:bg-purple-500/20 transition-all duration-300 box-shadow-depth font-medium"
             >
-              Discover Artists
+              Our Playlists
             </button>
             <button 
               onClick={() => handleNavClick('submit')}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 box-shadow-depth font-medium"
+              className="bg-gradient-to-r from-purple-300 to-blue-300 text-black px-8 py-4 rounded-xl hover:from-purple-200 hover:to-blue-200 transition-all duration-300 box-shadow-depth font-medium"
             >
               Submit Demo
             </button>

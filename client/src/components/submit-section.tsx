@@ -6,8 +6,10 @@ export default function SubmitSection() {
   const [formData, setFormData] = useState({
     artistName: "",
     email: "",
-    genre: "",
-    description: ""
+    artist2: "",
+    artist3: "",
+    description: "",
+    demoLink: ""
   });
   const { toast } = useToast();
 
@@ -15,7 +17,7 @@ export default function SubmitSection() {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.artistName || !formData.email || !formData.genre || !formData.description) {
+    if (!formData.artistName || !formData.email || !formData.description || !formData.demoLink) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields",
@@ -34,8 +36,10 @@ export default function SubmitSection() {
     setFormData({
       artistName: "",
       email: "",
-      genre: "",
-      description: ""
+      artist2: "",
+      artist3: "",
+      description: "",
+      demoLink: ""
     });
   };
 
@@ -48,12 +52,7 @@ export default function SubmitSection() {
 
   return (
     <section id="submit" className="py-20 relative">
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')`
-        }}
-      />
+      <div className="absolute inset-0 cosmic-stars" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -73,7 +72,7 @@ export default function SubmitSection() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-purple-300 text-sm font-medium mb-2">
-                    Artist Name *
+                    Main Artist *
                   </label>
                   <input 
                     type="text"
@@ -101,25 +100,48 @@ export default function SubmitSection() {
                 </div>
               </div>
               
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-purple-300 text-sm font-medium mb-2">
+                    Collaborating Artist 2
+                  </label>
+                  <input 
+                    type="text"
+                    name="artist2"
+                    value={formData.artist2}
+                    onChange={handleInputChange}
+                    className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
+                    placeholder="Optional collaborator"
+                  />
+                </div>
+                <div>
+                  <label className="block text-purple-300 text-sm font-medium mb-2">
+                    Collaborating Artist 3
+                  </label>
+                  <input 
+                    type="text"
+                    name="artist3"
+                    value={formData.artist3}
+                    onChange={handleInputChange}
+                    className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
+                    placeholder="Optional collaborator"
+                  />
+                </div>
+              </div>
+              
               <div>
                 <label className="block text-purple-300 text-sm font-medium mb-2">
-                  Genre *
+                  Demo Link (SoundCloud/Google Drive) *
                 </label>
-                <select 
-                  name="genre"
-                  value={formData.genre}
+                <input 
+                  type="url"
+                  name="demoLink"
+                  value={formData.demoLink}
                   onChange={handleInputChange}
-                  className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:border-purple-400 focus:outline-none transition-colors"
+                  className="w-full bg-black/30 border border-purple-500/30 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors"
+                  placeholder="https://soundcloud.com/your-track or https://drive.google.com/..."
                   required
-                >
-                  <option value="">Select your cosmic genre</option>
-                  <option value="ambient">Ambient Techno</option>
-                  <option value="psytrance">Psytrance</option>
-                  <option value="synthwave">Synthwave</option>
-                  <option value="space-bass">Space Bass</option>
-                  <option value="cosmic-disco">Cosmic Disco</option>
-                  <option value="other">Other Galactic Sounds</option>
-                </select>
+                />
               </div>
               
               <div>
@@ -136,16 +158,7 @@ export default function SubmitSection() {
                 />
               </div>
               
-              <div>
-                <label className="block text-purple-300 text-sm font-medium mb-2">
-                  Demo File
-                </label>
-                <div className="glass-morphism rounded-xl p-8 border-2 border-dashed border-purple-500/30 text-center hover:border-purple-400/50 transition-colors cursor-pointer">
-                  <Upload className="w-12 h-12 mx-auto mb-4 text-purple-400" />
-                  <p className="text-gray-300 mb-2">Drop your demo here or click to browse</p>
-                  <p className="text-gray-500 text-sm">MP3, WAV, FLAC up to 100MB</p>
-                </div>
-              </div>
+
               
               <button 
                 type="submit"

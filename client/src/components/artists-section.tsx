@@ -4,28 +4,30 @@ const artists = [
     name: "Stellar Nexus",
     genre: "Ambient Techno • Deep Space",
     description: "Crafting ethereal soundscapes that transport listeners across galaxies",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+    gradient: "linear-gradient(135deg, rgba(147, 51, 234, 0.3) 0%, rgba(30, 58, 138, 0.3) 100%)"
   },
   {
     id: 2,
     name: "Cosmic Echo",
     genre: "Psytrance • Cosmic Bass",
     description: "Blending hypnotic rhythms with interstellar frequency modulations",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+    gradient: "linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%)"
   },
   {
     id: 3,
     name: "Void Walker",
     genre: "Dark Synthwave • Space Opera",
     description: "Epic cinematic compositions for interplanetary voyages",
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+    gradient: "linear-gradient(135deg, rgba(88, 28, 135, 0.3) 0%, rgba(30, 64, 175, 0.3) 100%)"
   }
 ];
 
 export default function ArtistsSection() {
   return (
     <section id="artists" className="py-20 relative">
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-0 cosmic-stars" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-glow">
             <span className="bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
@@ -43,11 +45,14 @@ export default function ArtistsSection() {
               key={artist.id}
               className="glass-morphism rounded-2xl p-6 hover:bg-purple-500/10 transition-all duration-500 box-shadow-card group"
             >
-              <img 
-                src={artist.image}
-                alt={artist.name}
-                className="w-full h-64 object-cover rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500"
-              />
+              <div 
+                style={{ background: artist.gradient }}
+                className="w-full h-64 rounded-xl mb-4 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center"
+              >
+                <div className="text-6xl font-bold text-white/20">
+                  {artist.name.charAt(0)}
+                </div>
+              </div>
               <h3 className="text-xl font-semibold mb-2 text-purple-300">{artist.name}</h3>
               <p className="text-gray-400 text-sm mb-4">{artist.genre}</p>
               <p className="text-gray-300 text-sm leading-relaxed">

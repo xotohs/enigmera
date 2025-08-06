@@ -49,22 +49,28 @@ export default function GlassHeader() {
               Home
             </button>
             <button 
+              onClick={() => handleNavClick('about')}
+              className="text-white hover:text-purple-300 transition-colors duration-300 font-medium"
+            >
+              About
+            </button>
+            <button 
               onClick={() => handleNavClick('artists')}
               className="text-white hover:text-purple-300 transition-colors duration-300 font-medium"
             >
               Artists
             </button>
             <button 
+              onClick={() => handleNavClick('playlists')}
+              className="text-white hover:text-purple-300 transition-colors duration-300 font-medium"
+            >
+              Playlists
+            </button>
+            <button 
               onClick={() => handleNavClick('submit')}
               className="text-white hover:text-purple-300 transition-colors duration-300 font-medium"
             >
               Submit
-            </button>
-            <button 
-              onClick={() => handleNavClick('about')}
-              className="text-white hover:text-purple-300 transition-colors duration-300 font-medium"
-            >
-              About
             </button>
           </div>
           
@@ -92,22 +98,28 @@ export default function GlassHeader() {
                 Home
               </button>
               <button 
+                onClick={() => handleNavClick('about')}
+                className="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-left"
+              >
+                About
+              </button>
+              <button 
                 onClick={() => handleNavClick('artists')}
                 className="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-left"
               >
                 Artists
               </button>
               <button 
+                onClick={() => handleNavClick('playlists')}
+                className="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-left"
+              >
+                Playlists
+              </button>
+              <button 
                 onClick={() => handleNavClick('submit')}
                 className="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-left"
               >
                 Submit
-              </button>
-              <button 
-                onClick={() => handleNavClick('about')}
-                className="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-left"
-              >
-                About
               </button>
             </div>
           </div>
